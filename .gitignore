@@ -14,3 +14,8 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###< OTHERS FILES ###
+.idea
+.DS_Store
+###> OTHER FILES ###
