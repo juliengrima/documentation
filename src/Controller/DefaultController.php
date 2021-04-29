@@ -4,8 +4,9 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class DefaultController
+class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
@@ -14,8 +15,6 @@ class DefaultController
     {
         $number = random_int(0, 100);
 
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        return $this->render('index.html.twig');
     }
 }

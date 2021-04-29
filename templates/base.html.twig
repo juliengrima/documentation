@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('') }}" />
-    <link rel="stylesheet" href="{{ asset('') }}" />
-    <link rel="stylesheet" href="{{ asset('') }}" />
+    <link rel="icon" type="image/x-icon" href="" />
+    {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="is-preload">
@@ -18,14 +15,7 @@
     {% block body %}{% endblock %}
     {% block footer %}{% endblock %}
     {% block javascripts %}
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script src="{{ asset('') }}"></script>
-        <script type="text/javascript" src="{{ asset('') }}"></script>
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
     </div>
 </body>
