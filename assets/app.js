@@ -13,5 +13,10 @@ import './styles/fontawesome-all.min.css';
 import './styles/app.css';
 
 // start the Stimulus application
+import './controllers/jquery.min';
 import './bootstrap';
-import $ from 'jquery';
+import './controllers/breakpoints.min';
+import './controllers/browser.min';
+import './controllers/util';
+import './controllers/main';
+import './controllers/hello_controller';
