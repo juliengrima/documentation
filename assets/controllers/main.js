@@ -3,10 +3,9 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-import $ from './jquery.min';
-(function($) {
+(function ($) {
 
-	var	$window = $(window),
+	let	$window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
@@ -182,4 +181,4 @@ import $ from './jquery.min';
 
 			});
 
-})(jQuery);
+})(jquery);

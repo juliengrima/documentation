@@ -6,17 +6,16 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/noscript.css';
 import './styles/main.css';
 import './styles/fontawesome-all.min.css';
 import './styles/app.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // start the Stimulus application
 import './controllers/jquery.min';
-import './bootstrap';
-import './controllers/breakpoints.min';
 import './controllers/browser.min';
-import './controllers/util';
+import './controllers/breakpoints.min';
 import './controllers/main';
+import './bootstrap';
 import './controllers/hello_controller';
