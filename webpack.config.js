@@ -22,8 +22,8 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('jquery', './assets/controllers/jquery.min.js')
-    .addEntry('breakpoint', './assets/controllers/breakpoints.min.js')
-    .addEntry('browser', './assets/controllers/browser.min.js')
+    // .addEntry('breakpoints', './assets/controllers/breakpoints.min.js')
+    // .addEntry('browser', './assets/controllers/browser.min.js')
     .addEntry('main', './assets/controllers/main.js')
     .addEntry('util', './assets/controllers/hello_controller')
     //.addEntry('page2', './assets/page2.js')

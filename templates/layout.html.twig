@@ -7,7 +7,7 @@
 
             <!-- Logo -->
             <a href="{{ path('homepage') }}" class="logo">
-                <span class="symbol"><img src="./public/images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+                <span class="symbol"><img src="{{ asset('images/logo.svg') }}" alt="" /></span><span class="title">Phantom</span>
             </a>
 
             <!-- Nav -->
@@ -73,12 +73,4 @@
 
 {% block javascripts %}
     {{ parent() }}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script src="{{ asset('') }}"></script>#}
-{#    <script type="text/javascript" src="{{ asset('') }}"></script>#}
 {% endblock %}

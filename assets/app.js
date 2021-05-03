@@ -14,8 +14,8 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './controllers/jquery.min';
-import './controllers/browser.min';
-import './controllers/breakpoints.min';
+// import './controllers/browser.min';
+// import './controllers/breakpoints.min';
 import './controllers/main';
 import './bootstrap';
-import './controllers/hello_controller';
+// import './controllers/hello_controller';
