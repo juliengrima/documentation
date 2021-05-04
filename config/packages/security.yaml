@@ -22,9 +22,9 @@ security:
                 authenticators:
                     - App\Security\Authenticator
                     
-            login_throttling:
-                max_attempts: 3
-                
+#            login_throttling:
+#                max_attempts: 3
+            
 
             logout:
                 path: app_logout
