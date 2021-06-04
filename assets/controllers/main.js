@@ -3,21 +3,25 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-import $ from './jquery.min';
-(function($) {
-
+// import './breakpoints.min';
+import $ from 'jquery';
+// export default $ (function ($) {
+// (function ($) {
+export default $(document).ready(function () {
 	var	$window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ '361px',   '480px'  ],
-			xxsmall:  [ null,      '360px'  ]
-		});
+	// 	breakpoints({
+	// 		xxxlarge: [ '1800px',  '2880px' ],
+	// 		xxlarge:  [ '1080px',  '1920px' ],
+	// 		xlarge:   [ '1281px',  '1680px' ],
+	// 		large:    [ '981px',   '1280px' ],
+	// 		medium:   [ '737px',   '980px'  ],
+	// 		small:    [ '481px',   '736px'  ],
+	// 		xsmall:   [ '361px',   '480px'  ],
+	// 		xxsmall:  [ null,      '360px'  ]
+	// 	});
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
@@ -27,8 +31,8 @@ import $ from './jquery.min';
 		});
 
 	// Touch?
-		if (browser.mobile)
-			$body.addClass('is-touch');
+	// 	if (browser.mobile)
+	// 		$body.addClass('is-touch');
 
 	// Forms.
 		var $form = $('form');
@@ -81,11 +85,11 @@ import $ from './jquery.min';
 					.triggerHandler('--init');
 
 				// Fix.
-					if (browser.name == 'ie'
-					||	browser.mobile)
-						$this
-							.css('max-height', '10em')
-							.css('overflow-y', 'auto');
+				// 	if (browser.name == 'ie'
+				// 	||	browser.mobile)
+				// 		$this
+				// 			.css('max-height', '10em')
+				// 			.css('overflow-y', 'auto');
 
 			});
 
@@ -182,4 +186,4 @@ import $ from './jquery.min';
 
 			});
 
-})(jQuery);
+})(jquery);
