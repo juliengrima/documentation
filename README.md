@@ -32,46 +32,21 @@ A Symfony project created on April 29, 2021, 11:30 am.
                 post_max_size = 128M
                 upload_max_filesize = 128M
                 
-        	1. ^$ git clone git@github.com:juliengrima/factures-devis.git
-        	or
-        	2. ^$ git clone https://github.com/juliengrima/factures-devis.git
-        	3. ^$ cd gestionclients
-        	4. ^$ composer install 
-        	        (follow instructions after composer's installation)
-        	5. ^$ composer dump-autoload 
-                    (fix bundles bug with Symfony 3.3.6)
-        	6. ^$ php bin/console d:d:c 
-        	        (create database)
-        	7. ^$ php bin/console d:s:u --force
-        	        (create tables in data base)
-        	8. ^$ npm install 
-        	        (Install node pakages)
-            9. ^$ npm run watch
-                    (Public/Build Files Compilation)
-
-    ## when you create a bundle :
-    
-    Add in COMPOSER.JSON
-    
-        "autoload": { 
-    
-        "psr-4": { 
-        ================================================================
-        ---> "AppBundle\\": "src/AppBundle", 
-             "BlogBundle\\": "src/BlogBundle", 
-             "DemoBundle\\": "src/DemoBundle"
-        ================================================================
-    
-        }, 
-    
-        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ] },
-        
-    in terminal :  
-    
-        $ composer dump-autoload
-    
-    the bundle is active
-
+        1. ^$ git clone git@github.com:juliengrima/gestionclients.git
+    	Or
+    	2. ^$ git clone https://github.com/juliengrima/gestionclients.git
+    	3. ^$ cd gestionclients
+    	4. ^$ composer install 
+    	        (Follow the instructions following the installation of the composer)
+        5. ^$ yarn install
+                    (Webpack Encore)
+    	6. ^$ php bin/console d:d:c 
+    	        (Database creation)
+    	7. ^$ php bin/console make:migration
+    	        (Saving tables in the database)
+    	8. ^$ yarn encore dev or npm encore dev (dev mod)
+                Use in the production
+              yarn encore production or npm run build
 
     ## ** ---------------------------------- FRENCH --------------------------- :**
 
@@ -88,45 +63,22 @@ A Symfony project created on April 29, 2021, 11:30 am.
                       post_max_size = 128M
                       upload_max_filesize = 128M
       
-    	1. ^$ git clone git@github.com:juliengrima/factures-devis.git
+    	1. ^$ git clone git@github.com:juliengrima/gestionclients.git
     	ou
-    	2. ^$ git clone https://github.com/juliengrima/factures-devis.git
-    	3. ^$ cd facture-devis
+    	2. ^$ git clone https://github.com/juliengrima/gestionclients.git
+    	3. ^$ cd gestionclients
     	4. ^$ composer install 
     	        (Suivez les instructions succédant l'installation du composer)
-    	        (l'adresse mail est vivement recommandé pour FosUser)
-    	5. ^$ composer dump-autoload 
-                (Evite certain problèmes de bundles avec Symfony 3.3.6)
+        5. ^$ yarn install
+                    (Webpack Encore)
     	6. ^$ php bin/console d:d:c 
     	        (Création de la base de données)
-    	7. ^$ php bin/console d:s:u --force
+    	7. ^$ php bin/console make:migration
     	        (Enregistrement des tables dans la base de données)
-    	8. ^$ php bin/console a:i --symlink 
-    	        (Non obligatoire car le dossier PUBLIC est directement dans le web)
+    	8. ^$ yarn encore dev ou npm encore dev (mode developpeur)
+                Utiliser bour la prodution
+              yarn encore production ou npm run build
 
-## Lors de la création d'un nouveau bundle:
-
-Ajouter le namespace dans COMPOSER.JSON
-
-
-    "autoload": { 
-
-    "psr-4": { 
-    ================================================================
-    ---> "AppBundle\\": "src/AppBundle", 
-         "BlogBundle\\": "src/BlogBundle", 
-         "DemoBundle\\": "src/DemoBundle"
-    ================================================================
-
-    }, 
-
-    "classmap": [ "app/AppKernel.php", "app/AppCache.php" ] },
-
-Dans la console taper:
-
-    $ composer dump-autoload
-
-Le Bundle est activé
 
 
 ```

@@ -37,6 +37,7 @@ class UserSociety
      */
     private $City;
 
+
     public function getId(): ?int
     {
         return $this->id;
