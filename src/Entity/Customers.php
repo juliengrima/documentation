@@ -37,11 +37,11 @@ class Customers
      */
     private $phone2;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "merge", "remove"})
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     */
-    private $user;
+//    /**
+//     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "merge", "remove"})
+//     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+//     */
+//    private $user;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
