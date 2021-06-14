@@ -1,40 +1,53 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-    <!-- Main -->
-    <div id="main">
-        <div class="inner">
-            <header>
-                <h1>This is Phantom, a free, fully responsive site<br />
-                    template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-                <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-            </header>
-            <section class="tiles">
-{#                {% for i in 1..6 %}#}
-{#                    <article class="style{{ i }}">#}
-{#									<span class="image">#}
-{#										<img src="{{ asset("images/pic0{{ i }}.jpg") }}" alt="pic0{{ i }}" />#}
-{#									</span>#}
-{#                        <a href="#">#}
-{#                            <h2>Magna{{ i }}</h2>#}
-{#                            <div class="content">#}
-{#                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>#}
-{#                            </div>#}
-{#                        </a>#}
-{#                    </article>#}
-{#                {% endfor %}#}
-                <article class="style1">
-									<span class="image">
-										<img src="{{ asset("images/pic01.jpg") }}" alt="pic01" />
-									</span>
-                    <a href="#">
-                        <h2>INTRANET CLIENT</h2>
-                        <div class="content">
-                            <p>Informations du réseau</p>
-                        </div>
-                    </a>
-                </article>
+    <!-- Header -->
+    <section id="header">
+        <!-- Banner -->
+            <section id="banner">
+                <a href="{{ path('homepage') }}">
+                <header>
+                    <h2>DOCUMENTATION DES RESEAUX CLIENTS</h2>
+                    <p>A responsive template by HTML5 UP</p>
+                </header>
+                </a>
             </section>
+
+{#    --------------------------------------------------------------------------    #}
+
+    <!-- Main -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Portfolio -->
+                    <section>
+                        <header class="major">
+                            <h2>My Portfolio</h2>
+                        </header>
+                        <div class="row">
+                            {% for i in 0..10 %}
+                            <div class="col-4 col-6-medium col-12-small">
+                                <section class="box">
+                                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                                    <header>
+                                        <h3>Ipsum feugiat et dolor</h3>
+                                    </header>
+                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                    <footer>
+                                        <ul class="actions">
+                                            <li><a href="#" class="button alt">Find out more</a></li>
+                                        </ul>
+                                    </footer>
+                                </section>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
