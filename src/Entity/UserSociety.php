@@ -37,6 +37,12 @@ class UserSociety
      */
     private $City;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "merge", "remove"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
 
     public function getId(): ?int
     {
