@@ -1,20 +1,5 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout.html.twig' %}
 {% block body %}
-    <!-- Header -->
-    <section id="header">
-        <!-- Banner -->
-            <section id="banner">
-                <a href="{{ path('homepage') }}">
-                <header>
-                    <h2>DOCUMENTATION DES RESEAUX CLIENTS</h2>
-                    <p>A responsive template by HTML5 UP</p>
-                </header>
-                </a>
-            </section>
-
-{#    --------------------------------------------------------------------------    #}
-
     <!-- Main -->
     <section id="main">
         <div class="container">
@@ -27,7 +12,7 @@
                             <h2>My Portfolio</h2>
                         </header>
                         <div class="row">
-                            {% for i in 0..10 %}
+                            {% for i in 0..5 %}
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
                                     <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
@@ -45,7 +30,6 @@
                             {% endfor %}
                         </div>
                     </section>
-
                 </div>
             </div>
         </div>
