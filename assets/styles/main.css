@@ -1667,6 +1667,30 @@ input, select, textarea {
 				background: #151112;
 			}
 
+			input[type="button"].alt2,
+			input[type="submit"].alt2,
+			input[type="reset"].alt2,
+			button.alt2,
+			.button.alt2 {
+				background: #FF8C00;
+			}
+
+			input[type="button"].alt2:hover,
+			input[type="submit"].alt2:hover,
+			input[type="reset"].alt2:hover,
+			button.alt2:hover,
+			.button.alt2:hover {
+				background: #DAA520;
+			}
+
+			input[type="button"].alt2:active,
+			input[type="submit"].alt2:active,
+			input[type="reset"].alt2:active,
+			button.alt2:active,
+			.button.alt2:active {
+				background: #AAAAAA;
+			}
+
 		input[type="button"].icon:before,
 		input[type="submit"].icon:before,
 		input[type="reset"].icon:before,
@@ -2047,6 +2071,14 @@ input, select, textarea {
 				.icon.featured.alt:after {
 					border-top-color: #252122;
 				}
+
+			.icon.featured.alt2 {
+				background-color: #ea3723;
+			}
+
+			.icon.featured.alt2:after {
+				border-top-color: #e53359;
+			}
 
 			.icon.featured.alt2 {
 				background-color: #827a7c;
