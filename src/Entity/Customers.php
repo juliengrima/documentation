@@ -48,6 +48,11 @@ class Customers
      */
     private $phone3;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Documentation::class, mappedBy="customers_id", cascade={"persist", "remove"})
+     */
+    private $documentation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -109,6 +114,28 @@ class Customers
     public function setPhone3(?int $phone3): self
     {
         $this->phone3 = $phone3;
+
+        return $this;
+    }
+
+    public function getDocumentation(): ?Documentation
+    {
+        return $this->documentation;
+    }
+
+    public function setDocumentation(?Documentation $documentation): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($documentation === null && $this->documentation !== null) {
+            $this->documentation->setCustomersId(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($documentation !== null && $documentation->getCustomersId() !== $this) {
+            $documentation->setCustomersId($this);
+        }
+
+        $this->documentation = $documentation;
 
         return $this;
     }
