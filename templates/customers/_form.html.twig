@@ -1,4 +1,43 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<section>
+    <div class="row">
+        <div class="col-12">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="">Nome de la société : </th>
+                    <td colspan="10">
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Adresse de la société : </th>
+                    <td colspan="10">
+                        {{ form_widget(form.address) }}
+                        {{ form_errors(form.address) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Numéros de télephones</th>
+                    <td>
+                        {{ form_widget(form.phone1) }}
+                        {{ form_errors(form.phone1) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.phone2) }}
+                        {{ form_errors(form.phone2) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.phone3) }}
+                        {{ form_errors(form.phone3) }}
+                    </td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+</section>
 {{ form_end(form) }}

@@ -25,20 +25,26 @@
                             {% for customer in customers %}
                                 <div class="col-4 col-6-medium col-12-small">
                                     <section class="box">
-                                        <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                                        <a href="#" class="image featured"><img src="" alt="" /></a>
                                         <header>
-                                            <h3>{{ customer.name }}/h3>
+                                            <h3>{{ customer.name }}</h3>
                                         </header>
                                         <p>{{ customer.address }}</p>
-                                        <ul>
-                                            <li>{{ customer.phone1 }}</li>
-                                            <li>{{ customer.phone2 }}</li>
-                                            <li>{{ customer.phone3 }}</li>
+                                        <ul class="divided">
+                                            {% if customer.phone1 != null %}
+                                            <li>0{{ customer.phone1 }}</li>
+                                            {% endif %}
+                                            {% if customer.phone2 != null %}
+                                            <li>0{{ customer.phone2 }}</li>
+                                            {% endif %}
+                                            {% if customer.phone3 != null %}
+                                            <li>0{{ customer.phone3 }}</li>
+                                            {% endif %}
                                         </ul>
                                         <footer>
                                             <ul class="actions">
-                                                <li><a href="{{ path('customers_show', {'id': customer.id}) }}">show</a></li>
-                                                <li> <a href="{{ path('customers_edit', {'id': customer.id}) }}">edit</a></li>
+                                                <li><a href="{{ path('customers_show', {'id': customer.id}) }}" class="button alt">Afficher</a></li>
+                                                <li><a href="{{ path('customers_edit', {'id': customer.id}) }}" class="button">Editer</a></li>
                                             </ul>
                                         </footer>
                                     </section>

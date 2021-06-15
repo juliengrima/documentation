@@ -1,11 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}New Customers{% endblock %}
+{% block title %}Nouveau client{% endblock %}
 
 {% block body %}
-    <h1>Create new Customers</h1>
-
-    {{ include('customers/_form.html.twig') }}
-
-    <a href="{{ path('customers_index') }}">back to list</a>
+<section id="main">
+    <div class="container">
+        <h1>Création d'un nouveau client</h1>
+        <div class="div-padding-top">
+            {{ include('customers/_form.html.twig') }}
+        </div>
+        {{ include('customers/_form.html.twig') }}
+        <a href="{{ path('customers_index') }}" class="button alt">Retour à la liste</a>
+    </div>
+</section>
 {% endblock %}
