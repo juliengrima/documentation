@@ -16,7 +16,7 @@
         <tbody>
         {% for documentation in documentations %}
             <tr>
-                <td>{{ documentation.id }}</td>
+                <td>{{ documentation.id }} - {{ documentation.customersId.id }}</td>
                 <td>{{ documentation.document }}</td>
                 <td>
                     <a href="{{ path('documentation_show', {'id': documentation.id}) }}">show</a>
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('documentation_new') }}">Create new</a>
+{#    <a href="{{ path('documentation_new') }}">Create new</a>#}
 {% endblock %}

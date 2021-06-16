@@ -10,6 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Documentation
 {
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->id;
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

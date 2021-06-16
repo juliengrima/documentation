@@ -13,7 +13,7 @@ class DocumentationType extends AbstractType
     {
         $builder
             ->add('document')
-            ->add('customers_id')
+//            ->add('customers_id')
         ;
     }
 

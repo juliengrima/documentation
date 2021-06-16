@@ -7,7 +7,12 @@
 
     {{ include('documentation/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('documentation_index') }}">back to list</a>
+{#    <a href="{{ path('customers_index') }}">back to list</a>#}
 
     {{ include('documentation/_delete_form.html.twig') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/inline/ckeditor.js"></script>
 {% endblock %}

@@ -1,11 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}New Documentation{% endblock %}
 
 {% block body %}
+
+    {{ dump() }}
+<section id="main">
+    <div class="container">
     <h1>Create new Documentation</h1>
 
     {{ include('documentation/_form.html.twig') }}
 
     <a href="{{ path('documentation_index') }}">back to list</a>
+    </div>
+</section>
 {% endblock %}

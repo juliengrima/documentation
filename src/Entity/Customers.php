@@ -10,6 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Customers
 {
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->id . $this->name;
+    }
+
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
