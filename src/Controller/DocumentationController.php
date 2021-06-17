@@ -6,7 +6,7 @@ use App\Entity\Documentation;
 use App\Entity\Customers;
 use App\Form\DocumentationType;
 use App\Repository\DocumentationRepository;
-use ContainerFz0xDxJ\getMaker_AutoCommand_MakeUserService;
+//use ContainerFz0xDxJ\getMaker_AutoCommand_MakeUserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,6 +32,7 @@ class DocumentationController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $customerId = $em->getRepository('App:Customers')->findOneBy(array('id' => $custid));
+        $customers = $em->getRepository('App:Customers')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -40,12 +41,14 @@ class DocumentationController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('documentation_edit', [
-                'id' => $documentation
+                'id' => $documentation,
+                'customers' => $customers
             ]);
         }
 
         return $this->render('documentation/new.html.twig', [
             'documentation' => $documentation,
+            'cutomer' => $customers,
             'form' => $form->createView(),
         ]);
     }
@@ -63,17 +66,21 @@ class DocumentationController extends AbstractController
     {
             $form = $this->createForm(DocumentationType::class, $documentation);
             $form->handleRequest($request);
+            $em = $this->getDoctrine()->getManager();
+            $customers = $em->getRepository('App:Customers')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('documentation_edit', [
-                'id' => $documentation
+                'id' => $documentation,
+                'customers' => $customers
             ]);
         }
 
         return $this->render('documentation/edit.html.twig', [
             'documentation' => $documentation,
+            'customers' => $customers,
             'form' => $form->createView(),
         ]);
     }

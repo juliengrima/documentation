@@ -1,6 +1,13 @@
 body {
     background-color: lightgray;
 }
-.ck-button__label{
-    color: #5d5d5d;
+.ck.ck-reset, .ck.ck-reset_all, .ck.ck-reset_all * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #777;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: none;
+    word-wrap: break-word;
 }

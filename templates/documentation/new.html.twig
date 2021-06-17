@@ -22,7 +22,7 @@
                         </header>
                         <ul class="divided">
                             {% for i in 0..10 %}
-                                <li><a href="#">Sed et blandit consequat sed</a></li>
+                                <li><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </section>
