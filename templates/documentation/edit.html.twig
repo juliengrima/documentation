@@ -15,24 +15,14 @@
                             <a href="{{ path('homepage') }}">
                                 <h3>Accueil</h3>
                             </a>
-                            <p>{{ documentation.customersId.name }}</p>
-                            <p>{{ documentation.customersId.address }}</p>
-                            <ul>
-                                <li>{{ documentation.customersId.phone1 }}</li>
-                                <li>{{ documentation.customersId.phone2 }}</li>
-                                <li>{{ documentation.customersId.phone3 }}</li>
-                            </ul>
+                            {{ include('customer.html.twig') }}
                         </header>
                     </section>
                 <section class="box">
                     <header>
                         <h3><a href="{{ path('customers_index') }}">Liste clients</a></h3>
                     </header>
-                    <ul class="divided">
-                        {% for customer in customers %}
-                            <li><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
-                        {% endfor %}
-                    </ul>
+                    {{ include('list.html.twig') }}
                 </section>
 
             </div>

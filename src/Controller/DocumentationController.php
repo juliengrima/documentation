@@ -15,13 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/documentation')]
 class DocumentationController extends AbstractController
 {
-//    #[Route('/', name: 'documentation_index', methods: ['GET'])]
-//    public function index(DocumentationRepository $documentationRepository): Response
-//    {
-//        return $this->render('documentation/index.html.twig', [
-//            'documentations' => $documentationRepository->findAll(),
-//        ]);
-//    }
 
     #[Route('/{custid}/new', name: 'documentation_new', methods: ['POST', 'GET'])]
     public function new(Request $request, $custid): Response
@@ -48,18 +41,11 @@ class DocumentationController extends AbstractController
 
         return $this->render('documentation/new.html.twig', [
             'documentation' => $documentation,
-            'cutomer' => $customers,
+            'customers' => $customers,
+            'customerid' => $customerId,
             'form' => $form->createView(),
         ]);
     }
-
-//    #[Route('/{id}', name: 'documentation_show', methods: ['GET'])]
-//    public function show(Documentation $documentation): Response
-//    {
-//        return $this->render('documentation/show.html.twig', [
-//            'documentation' => $documentation,
-//        ]);
-//    }
 
     #[Route('/{id}/edit', name: 'documentation_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Documentation $documentation): Response
@@ -94,7 +80,7 @@ class DocumentationController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('documentation_index');
+        return $this->redirectToRoute('customers_index');
     }
 
     #[Route('/{id}/try', name: 'documentation_try', methods: ['GET', 'POST'])]

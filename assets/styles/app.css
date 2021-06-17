@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    background: #777;
+    background: #777 !important;
     text-decoration: none;
     vertical-align: middle;
     transition: none;

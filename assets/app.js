@@ -9,7 +9,7 @@
 // import './styles/noscript.css';
 import './styles/main.css';
 import './styles/fontawesome-all.min.css';
-import './styles/app.css';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 // start the Stimulus application
@@ -21,3 +21,4 @@ import './bootstrap';
 // import './controllers/browser.min';
 // import './controllers/breakpoints.min';
 // import './controllers/hello_controller';
+import './styles/app.css';

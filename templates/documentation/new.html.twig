@@ -9,22 +9,21 @@
                 <div class="col-4 col-12-medium">
 
                     <!-- Sidebar -->
-                    <a href="{{ path('homepage') }}">
+
                         <section class="box">
                             <header>
+                                <a href="{{ path('homepage') }}">
                                 <h3>Accueil</h3>
+                                </a>
                             </header>
+                            {{ include('customer.html.twig') }}
                         </section>
-                    </a>
+
                     <section class="box">
                         <header>
                             <h3>Liste clients</h3>
                         </header>
-                        <ul class="divided">
-                            {% for i in 0..10 %}
-                                <li><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
-                            {% endfor %}
-                        </ul>
+                        {{ include('list.html.twig') }}
                     </section>
 
                 </div>
