@@ -15,6 +15,7 @@ import './styles/app.css';
 // start the Stimulus application
 import './controllers/jquery.min';
 import './controllers/jquery.dropotron.min';
+// import './controllers/ckeditor';
 import './controllers/main';
 import './bootstrap';
 // import './controllers/browser.min';

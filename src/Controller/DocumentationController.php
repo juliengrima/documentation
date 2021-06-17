@@ -68,7 +68,7 @@ class DocumentationController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('documentation_edit', [
-                'documentation' => $documentation
+                'id' => $documentation
             ]);
         }
 
