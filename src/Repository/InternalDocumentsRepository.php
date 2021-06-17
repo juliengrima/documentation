@@ -9,7 +9,7 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method InternalDocuments|null find($id, $lockMode = null, $lockVersion = null)
  * @method InternalDocuments|null findOneBy(array $criteria, array $orderBy = null)
- * @method InternalDocuments[]    findAll()
+// * @method InternalDocuments[]    findAll()
  * @method InternalDocuments[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class InternalDocumentsRepository extends ServiceEntityRepository
