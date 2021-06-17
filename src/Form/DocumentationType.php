@@ -14,8 +14,8 @@ class DocumentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('document', HiddenType::class)
-//            ->add('document')
+//            ->add('document', HiddenType::class)
+            ->add('document')
 //            ->add('customers_id')
         ;
     }

@@ -1,7 +1,6 @@
 body {
     background-color: lightgray;
 }
-
-.ck .ck-sticky-panel{
+.ck-button__label{
     color: #5d5d5d;
 }

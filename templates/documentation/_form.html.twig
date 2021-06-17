@@ -1,8 +1,8 @@
 <article class="box post" id="box-post">
     {{ form_start(form) }}
-        <div id="editor">
-        </div>
-{#                {{ form_row(form.document) }}#}
+{#        <div id="editor">#}
+{#        </div>#}
+                {{ form_row(form.document, {'attr': {'id': 'editor'}}) }}
 
         <button class="btn">{{ button_label|default('Save') }}</button>
     {{ form_end(form) }}
