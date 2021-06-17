@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InternalDocuments index{% endblock %}
+
+{% block body %}
+    <h1>InternalDocuments index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Document</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for internal_document in internal_documents %}
+            <tr>
+                <td>{{ internal_document.id }}</td>
+                <td>{{ internal_document.name }}</td>
+                <td>{{ internal_document.document }}</td>
+                <td>
+                    <a href="{{ path('internal_documents_show', {'id': internal_document.id}) }}">show</a>
+                    <a href="{{ path('internal_documents_edit', {'id': internal_document.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('internal_documents_new') }}">Create new</a>
+{% endblock %}
