@@ -40,7 +40,7 @@ class DocumentationController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('documentation_edit', [
-                'documentation' => $documentation
+                'id' => $documentation
             ]);
         }
 

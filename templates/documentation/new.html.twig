@@ -3,8 +3,6 @@
 {% block title %}New Documentation{% endblock %}
 
 {% block body %}
-
-    {{ dump() }}
     <section id="main">
         <div class="container">
             <se class="row">
@@ -32,9 +30,38 @@
                 </div>
                 <div class="col-8 col-12-medium imp-medium">
 
-    {{ include('documentation/_form.html.twig') }}
+                {{ include('documentation/_form.html.twig') }}
 
-{#    <a href="{{ path('documentation_index') }}">back to list</a>#}
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+{#    <script>#}
+{#        BalloonEditor#}
+{#            .create( document.querySelector( '#editor' ) )#}
+{#            .then(editor => {#}
+{#                 document.querySelector('#box-post form').addEventListener('submit', function (e){#}
+{#                     e.preventDefault();#}
+{#                     this.querySelector('#editor + input').value = editor.getData();#}
+{#                     this.submit();#}
+{#                 })#}
+{#            })#}
+{#            .catch( error => {#}
+{#                console.error( error );#}
+{#            } );#}
+{#    </script>#}
+{% endblock %}
+
