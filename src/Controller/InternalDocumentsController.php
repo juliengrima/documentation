@@ -27,17 +27,22 @@ class InternalDocumentsController extends AbstractController
         $internalDocument = new InternalDocuments();
         $form = $this->createForm(InternalDocumentsType::class, $internalDocument);
         $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $internalDocumentList = $em->getRepository('App:InternalDocuments')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($internalDocument);
             $entityManager->flush();
 
-            return $this->redirectToRoute('internal_documents_index');
+            return $this->redirectToRoute('internal_documents_edit', [
+                'id' => $internalDocument->getId(),
+            ]);
         }
 
         return $this->render('internal_documents/new.html.twig', [
             'internal_document' => $internalDocument,
+            'listnames' => $internalDocumentList,
             'form' => $form->createView(),
         ]);
     }
@@ -55,15 +60,21 @@ class InternalDocumentsController extends AbstractController
     {
         $form = $this->createForm(InternalDocumentsType::class, $internalDocument);
         $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $internalDocumentList = $em->getRepository('App:InternalDocuments')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('internal_documents_index');
+            return $this->redirectToRoute('internal_documents_edit', [
+                'id' => $internalDocument,
+                'listnames' => $internalDocumentList,
+            ]);
         }
 
         return $this->render('internal_documents/edit.html.twig', [
             'internal_document' => $internalDocument,
+            'listnames' => $internalDocumentList,
             'form' => $form->createView(),
         ]);
     }

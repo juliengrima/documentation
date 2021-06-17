@@ -7,11 +7,11 @@
     <div class="container">
         <h1>Edit Customers</h1>
 
-        {{ include('customers/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('customers/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
         <table>
             <tr>
-                <td><a href="{{ path('customers_index') }}" class="button alt">back to list</a></td>
+                <td><a href="{{ path('customers_index') }}" class="button alt">Retour à la liste</a></td>
                 <td>{{ include('customers/_delete_form.html.twig') }}</td>
             </tr>
         </table>

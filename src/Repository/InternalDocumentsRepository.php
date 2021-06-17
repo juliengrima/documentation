@@ -19,9 +19,14 @@ class InternalDocumentsRepository extends ServiceEntityRepository
         parent::__construct($registry, InternalDocuments::class);
     }
 
-    // /**
-    //  * @return InternalDocuments[] Returns an array of InternalDocuments objects
-    //  */
+     /**
+      * @return InternalDocuments[] Returns an array of InternalDocuments objects
+      */
+    public function findAll()
+    {
+        return $this->findBy(array(), array('name' => 'ASC'));
+    }
+
     /*
     public function findByExampleField($value)
     {
