@@ -1,0 +1,90 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}InternalDocuments index{% endblock %}
+
+{% block body %}
+    <section id="intro" class="container">
+        <footer>
+            <ul class="actions">
+                <li><a href="{{ path('homepage') }}" class="button large alt">Accueil</a></li>
+                <li><a href="{{ path('internal_documents_new') }}" class="button large">Nouveau document</a></li>
+                {#                <li><a href="#" class="button alt large">Learn More</a></li>#}
+            </ul>
+        </footer>
+    </section>
+    <!-- Main -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Portfolio -->
+                    <section>
+                        <header class="major">
+                            <h2>My Portfolio</h2>
+                        </header>
+                        <div class="row">
+                            {% for internal_document in internal_documents %}
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <section class="box">
+                                        <a class="image featured"><img src="" alt="" /></a>
+                                        <header>
+                                            <h3>{{ internal_document.name }}</h3>
+                                        </header>
+                                        <p></p>
+                                        <div class="text-right">
+                                        </div>
+                                        <footer>
+                                            <ul class="actions">
+                                                <li>
+                                                    <a href="{{ path('internal_documents_edit', {'id': internal_document.id}) }}" class="button alt">Afficher</a>
+                                                </li>
+{#                                                <li><a href="{{ path('customers_edit', {'id': customer.id}) }}" class="button alt2">Editer</a></li>#}
+                                                <li>{{ include('internal_documents/_delete_form.html.twig') }}</li>
+                                            </ul>
+                                        </footer>
+                                    </section>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{#    ------------------------------------------------------------    #}
+{#    <h1>InternalDocuments index</h1>#}
+
+{#    <table class="table">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>Name</th>#}
+{#                <th>Document</th>#}
+{#                <th>actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for internal_document in internal_documents %}#}
+{#            <tr>#}
+{#                <td>{{ internal_document.id }}</td>#}
+{#                <td>{{ internal_document.name }}</td>#}
+{#                <td>{{ internal_document.document }}</td>#}
+{#                <td>#}
+{#                    <a href="{{ path('internal_documents_show', {'id': internal_document.id}) }}">show</a>#}
+{#                    <a href="{{ path('internal_documents_edit', {'id': internal_document.id}) }}">edit</a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="4">no records found</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+{#    <a href="{{ path('internal_documents_new') }}">Create new</a>#}
+{% endblock %}

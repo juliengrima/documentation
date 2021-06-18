@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Edit Documentation{% endblock %}
+
+{% block body %}
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-12-medium">
+
+                <!-- Sidebar -->
+
+                    <section class="box">
+                        <header>
+                            <a href="{{ path('homepage') }}">
+                                <h3>Accueil</h3>
+                            </a>
+                            {{ include('customer.html.twig') }}
+                        </header>
+                    </section>
+                <section class="box">
+                    <header>
+                        <h3><a href="{{ path('customers_index') }}">Liste clients</a></h3>
+                    </header>
+                    {{ include('list.html.twig') }}
+                </section>
+
+            </div>
+            <div class="col-8 col-12-medium imp-medium">
+
+                 {{ include('documentation/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+                 {{ include('documentation/_delete_form.html.twig') }}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+{% endblock %}

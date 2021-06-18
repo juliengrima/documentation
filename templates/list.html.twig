@@ -1,0 +1,5 @@
+<ul class="divided">
+    {% for customer in customers %}
+        <li><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
+    {% endfor %}
+</ul>

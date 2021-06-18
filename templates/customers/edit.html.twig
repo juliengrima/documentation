@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Edit Customers{% endblock %}
+
+{% block body %}
+<section id="main">
+    <div class="container">
+        <h1>Edit Customers</h1>
+
+        {{ include('customers/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        <table>
+            <tr>
+                <td><a href="{{ path('customers_index') }}" class="button alt">Retour à la liste</a></td>
+                <td>{{ include('customers/_delete_form.html.twig') }}</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block body %}
+    <h1>Documentation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ documentation.id }}</td>
+            </tr>
+            <tr>
+                <th>Document</th>
+                <td>{{ documentation.document }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('documentation_index') }}">back to list</a>
+
+    <a href="{{ path('documentation_edit', {'id': documentation.id}) }}">edit</a>
+
+    {{ include('documentation/_delete_form.html.twig') }}
+{% endblock %}

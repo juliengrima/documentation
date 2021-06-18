@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Customers index{% endblock %}
+
+{% block body %}
+    <section id="intro" class="container">
+        <footer>
+            <ul class="actions">
+                <li><a href="{{ path('homepage') }}" class="button large alt">Accueil</a></li>
+                <li><a href="{{ path('customers_new') }}" class="button large">Nouveau client</a></li>
+                {#                <li><a href="#" class="button alt large">Learn More</a></li>#}
+            </ul>
+        </footer>
+    </section>
+    <!-- Main -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Portfolio -->
+                    <section>
+                        <header class="major">
+                            <h2>My Portfolio</h2>
+                        </header>
+                        <div class="row">
+                            {% for customer in customers %}
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <section class="box">
+                                        <a class="image featured"><img src="" alt="" /></a>
+                                        <header>
+                                            <h3>{{ customer.name }}</h3>
+                                        </header>
+                                        <p>{{ customer.address }}</p>
+                                        <div class="text-right">
+                                            {% if customer.phone1 != null %}
+                                                <div class="">0{{ customer.phone1 }}</div>
+                                            {% endif %}
+                                            {% if customer.phone2 != null %}
+                                                <div class="">0{{ customer.phone2 }}</div>
+                                            {% endif %}
+                                            {% if customer.phone3 != null %}
+                                                <div class="">0{{ customer.phone3 }}</div>
+                                            {% endif %}
+                                        </div>
+                                        <footer>
+                                            <ul class="actions">
+                                                <li>
+                                                    <a href="{{ path('documentation_try', {'id': customer.id}) }}" class="button alt">Afficher</a>
+                                                </li>
+                                                <li><a href="{{ path('customers_edit', {'id': customer.id}) }}" class="button alt2">Editer</a></li>
+{#                                                <li>{{ include('customers/_delete_form.html.twig') }}</li>#}
+                                            </ul>
+                                        </footer>
+                                    </section>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Edit InternalDocuments{% endblock %}
+
+{% block body %}
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-12-medium">
+
+                <!-- Sidebar -->
+
+                <section class="box">
+                    <header>
+                        <a href="{{ path('homepage') }}">
+                            <h3>Accueil</h3>
+                        </a>
+                        <p><a href="{{ path('internal_documents_index') }}">Retour à la liste</a></p>
+                        <p>{{ internal_document.name }}</p>
+{#                        {{ include('customer.html.twig') }}#}
+                    </header>
+                </section>
+                <section class="box">
+                    <header>
+                        <h3>Documents</h3>
+                    </header>
+                    {% if listnames != null %}
+                        <ul class="divided">
+                            {% for list in listnames %}
+                                <li><a href="{{ path('internal_documents_edit', {'id': list.id}) }}">{{ list.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                    {% endif %}
+{#                    {{ include('list.html.twig') }}#}
+                </section>
+
+            </div>
+            <div class="col-8 col-12-medium imp-medium">
+
+                {{ include('internal_documents/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+{#                {{ include('documentation/_delete_form.html.twig') }}#}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{#{% block body %}#}
+{#    <h1>Edit InternalDocuments</h1>#}
+
+{#    {{ include('internal_documents/_form.html.twig', {'button_label': 'Update'}) }}#}
+
+{#    <a href="{{ path('internal_documents_index') }}">back to list</a>#}
+
+{#    {{ include('internal_documents/_delete_form.html.twig') }}#}
+{#{% endblock %}#}
