@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Customers{% endblock %}
+
+{% block body %}
+<section id="main">
+    <div class="container">
+        <section id="header">
+            <h1>{{ customer.name }}</h1>
+            <div>
+                <div>{{ customer.address }}</div>
+                <div>{{ customer.phone1 }}</div>
+                <div>{{ customer.phone2 }}</div>
+                <div>{{ customer.phone3 }}</div>
+            </div>
+        </section>
+
+        <section>
+
+        </section>
+
+        <section>
+            <table>
+                <tr>
+                    <td><a href="{{ path('customers_index') }}" class="button alt">Retour à la liste</a></td>
+                    <td><a href="{{ path('customers_edit', {'id': customer.id}) }}" class="button">Editer</a></td>
+                    <td>{{ include('customers/_delete_form.html.twig') }}</td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% if documentation.customersId != null%}
+        <p>{{ documentation.customersId.name }}</p>
+        <p>{{ documentation.customersId.address }}</p>
+        <ul class="actions">
+            {% if documentation.customersId.phone1 != null %}
+                <li class="">0{{ documentation.customersId.phone1 }}</li>
+            {% endif %}
+            {% if documentation.customersId.phone2 != null %}
+                <li class="">0{{ documentation.customersId.phone2 }}</li>
+            {% endif %}
+            {% if documentation.customersId.phone3 != null %}
+                <li class="">0{{ documentation.customersId.phone3 }}</li>
+            {% endif %}
+        </ul>
+{% else %}
+        <p>{{ customerid.name }}</p>
+        <p>{{ customerid.address }}</p>
+        <ul class="actions">
+                {% if customerid.phone1 != null %}
+                        <li class="">0{{ customerid.phone1 }}</li>
+                {% endif %}
+                {% if customerid.phone2 != null %}
+                        <li class="">0{{ customerid.phone2 }}</li>
+                {% endif %}
+                {% if customerid.phone3 != null %}
+                        <li class="">0{{ customerid.phone3 }}</li>
+                {% endif %}
+        </ul>
+
+{% endif %}

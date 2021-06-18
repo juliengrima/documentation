@@ -1,0 +1,12 @@
+<article class="box post" id="box-post">
+{{ form_start(form) }}
+    <div style="padding-bottom: 5%">
+        {{ form_label(form.name, 'Nom du document') }}
+        {{ form_widget(form.name) }}
+    </div>
+    <div>
+        {{ form_row(form.document, { 'id': 'editor' }, {'attr': {'class': 'editor'}}) }}
+        <button class="btn alt2">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}
+</article>

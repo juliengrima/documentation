@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <!-- Header -->
+<section id="header">
+    <!-- Banner -->
+    <section id="banner">
+        <a href="{{ path('homepage') }}">
+            <header>
+                <h2>DOCUMENTATION DES RESEAUX CLIENTS</h2>
+                <p>Documentation et partages des informations clientèle</p>
+            </header>
+        </a>
+    </section>
+{% endblock %}
+{% block footer %}
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <section>
+                        <ul class="social">
+                            <li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
+                            <li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+                            <li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+                            <li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
+                            <li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+
+                    <!-- Copyright -->
+                    <div id="copyright">
+                        <ul class="links">
+                            <li>&copy; <a href="cybix-technology.com">Cybix-Technology.</a> All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

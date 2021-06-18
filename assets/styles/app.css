@@ -1,0 +1,13 @@
+body {
+    background-color: lightgray;
+}
+.ck.ck-reset, .ck.ck-reset_all, .ck.ck-reset_all * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #777 !important;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: none;
+    word-wrap: break-word;
+}
