@@ -44,9 +44,26 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
     <script>
         ClassicEditor
-            .create( document.querySelector( '#editor' ) )
+            .create( document.querySelector( '#editor' ), {
+                heading: {
+                    options: [
+                        {model: 'paragraph', title: 'Paragraphe', class: 'ck-heading_paragraph'},
+                        {model: 'Heading-1', view: 'h1', title: 'Titre - 1', class: 'ck-heading_heading1'},
+                        {model: 'Heading-2', view: 'h2', title: 'Titre - 2', class: 'ck-heading_heading2'},
+                        {model: 'Heading-3', view: 'h3', title: 'Titre - 3', class: 'ck-heading_heading3'},
+                        {model: 'Heading-4', view: 'h4', title: 'Titre - 4', class: 'ck-heading_heading4'}
+                    ]
+                },
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells',
+                        'tableProperties', 'tableCellProperties', 'toggleTableCaption'
+                    ]
+                },
+            })
             .catch( error => {
                 console.error( error );
             } );
     </script>
+
 {% endblock %}

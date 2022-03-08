@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}New InternalDocuments{% endblock %}
+
+{% block body %}
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-12-medium">
+
+                    <!-- Sidebar -->
+
+                    <section class="box">
+                        <header>
+                            <a href="{{ path('homepage') }}">
+                                <h3>Accueil</h3>
+                            </a>
+                        </header>
+                        <p><a href="{{ path('prices_index') }}">Retour à la liste</a></p>
+                    </section>
+
+                    <section class="box">
+                        <header>
+                            <h3>Tarifs</h3>
+                        </header>
+                        {% if listnames != null %}
+                            <ul class="divided">
+                                {% for list in listnames %}
+                                    <li><a href="{{ path('prices_edit', {'id': list.id}) }}">{{ list.pricename }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                        {% endif %}
+                    </section>
+
+                </div>
+                <div class="col-8 col-12-medium imp-medium">
+
+                    {{ include('prices/_form.html.twig') }}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+{% endblock %}
+
+
+
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}New Prices{% endblock %}#}
+
+{#{% block body %}#}
+{#    <h1>Create new Prices</h1>#}
+
+{#    {{ include('prices/_form.html.twig') }}#}
+
+{#    <a href="{{ path('prices_index') }}">back to list</a>#}
+{#{% endblock %}#}
