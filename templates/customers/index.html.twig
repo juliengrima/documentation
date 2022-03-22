@@ -21,14 +21,20 @@
                     <section>
                         <header class="major">
                             <h2>Nos clients</h2>
+                            <div>
+                                <label></label>
+                                <input id="searchbar" onkeyup="search_customers()" type="text" name="search" placeholder="rechercher..">
+                            </div>
                         </header>
+
                         <div class="row">
                             {% for customer in customers %}
                                 <div class="col-4 col-6-medium col-12-small">
+                                    <div class="blocs">
                                     <section class="box">
                                         <a class="image featured"><img src="" alt="" /></a>
                                         <header>
-                                            <h3>{{ customer.name }}</h3>
+                                            <h3 class="customers">{{ customer.name }}</h3>
                                         </header>
                                         <p>{{ customer.address }}</p>
                                         <div class="text-right">
@@ -52,6 +58,7 @@
                                             </ul>
                                         </footer>
                                     </section>
+                                    </div>
                                 </div>
                             {% endfor %}
                         </div>
@@ -61,3 +68,4 @@
         </div>
     </section>
 {% endblock %}
+
