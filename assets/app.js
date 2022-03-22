@@ -18,7 +18,7 @@ import './controllers/jquery.dropotron.min';
 // import './controllers/ckeditor';
 import './controllers/main';
 import './bootstrap';
-import './controllers/search';
+// import './controllers/search';
 // import './controllers/browser.min';
 // import './controllers/breakpoints.min';
 // import './controllers/hello_controller';

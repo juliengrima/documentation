@@ -1,5 +1,25 @@
-<ul class="divided">
+<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="rechercher" />
+</br>
+<ul class="divided" id="list">
     {% for customer in customers %}
-        <li><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
+        <li class="blocs"><a href="{{ path('documentation_try', {'id': customer.id}) }}">{{ customer.name }}</a></li>
     {% endfor %}
 </ul>
+
+<script type="javascript">
+// JavaScript code
+function search() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('blocs');
+
+        for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                        x[i].style.display="none";
+                }
+                else {
+                        x[i].style.display="bloc";
+                }
+        }
+}
+</script>

@@ -22,15 +22,15 @@
                         <header class="major">
                             <h2>Nos clients</h2>
                             <div>
-                                <label></label>
-                                <input id="searchbar" onkeyup="search_customers()" type="text" name="search" placeholder="rechercher..">
+                                <input id="searchbar" onkeyup="search_animal()" type="text"
+                                       name="search" placeholder="Search animals..">
                             </div>
                         </header>
 
-                        <div class="row">
+                        <div class="row" id="list">
                             {% for customer in customers %}
                                 <div class="col-4 col-6-medium col-12-small">
-                                    <div class="blocs">
+                                    <div class="animals">
                                     <section class="box">
                                         <a class="image featured"><img src="" alt="" /></a>
                                         <header>
@@ -67,5 +67,26 @@
             </div>
         </div>
     </section>
+
+<script type="javascript">
+    // JavaScript code
+    function search_animal() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('animals');
+
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                x[i].style.display="none";
+            }
+            else {
+                x[i].style.display="list-item";
+            }
+        }
+    }
+</script>
+
 {% endblock %}
+
+
 

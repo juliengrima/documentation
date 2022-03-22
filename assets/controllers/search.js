@@ -1,5 +1,5 @@
 // JavaScript code
-function search_customers() {
+function search() {
     let input = document.getElementById('searchbar').value
     input=input.toLowerCase();
     let x = document.getElementsByClassName('blocs');
