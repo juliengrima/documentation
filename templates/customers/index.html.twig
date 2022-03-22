@@ -22,8 +22,7 @@
                         <header class="major">
                             <h2>Nos clients</h2>
                             <div>
-                                <input id="searchbar" onkeyup="search_animal()" type="text"
-                                       name="search" placeholder="Search animals..">
+                                <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Rechercher..">
                             </div>
                         </header>
 
@@ -71,7 +70,7 @@
 <script type="javascript">
     // JavaScript code
     function search_animal() {
-        let input = document.getElementById('searchbar').value
+        let input = document.getElementById('searchbar').value;
         input=input.toLowerCase();
         let x = document.getElementsByClassName('animals');
 
@@ -80,7 +79,7 @@
                 x[i].style.display="none";
             }
             else {
-                x[i].style.display="list-item";
+                x[i].style.display="bloc";
             }
         }
     }
